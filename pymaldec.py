@@ -99,23 +99,32 @@ class App:
         root.geometry(alignstr)
         root.resizable(width=False, height=False)
         ft = tk.font.Font(family='Roboto',size=10)
-        heading = Label(root, text="probably does something",bg='#3f51b5',fg='white',font=ft)
+        empty = Label(root,background='#3f51b5')
+        heading = Label(root, text="Please, enter the file path",bg='#3f51b5',fg='white',font=ft)
         path = Label(root, text="Path_from", background='#3f51b5', fg='white',font=ft)
         path2 = Label(root, text="Path_to", background='#3f51b5',fg='white',font=ft)
-        heading.grid(row=0, column=1)
-        path.grid(row=1, column=0)
-        path2.grid(row=2, column=0)
+        
+        
+        empty.grid(row=0, column=1)
+        path.grid(row=2, column=0)
+        path2.grid(row=3, column=0)
+        
+        #path.place(x=10,y=20,ipadx="100")
         path = Entry(root)
         path2 = Entry(root)
-        path.grid(row=1, column=1,ipadx="100")
-        path2.grid(row=2, column=1,ipadx="100")
+        
+        path.grid(row=2, column=1,ipadx="100")
+        path2.grid(row=3, column=1,ipadx="100")
+
+        
+        heading.place(x=120,y=0)
         path.bind("<Return>", path2.focus_set())
   
         GButton_510=tk.Button(root)
         GButton_510["bg"] = "#757de8"
         GButton_510["font"] = ft
         GButton_510["fg"] = "Black"
-        GButton_510.grid(row=9, column=1)
+        #GButton_510.grid(row=9, column=1)
         GButton_510["justify"] = "center"
         GButton_510["text"] = "Compile"
         GButton_510.place(x=110, y=80, width=80, height=40)
@@ -125,7 +134,7 @@ class App:
         GButton_015["bg"] = "#ff7961"  
         GButton_015["font"] = ft
         GButton_015["fg"] = "Black"
-        GButton_015.grid(row=10, column=2)
+        #GButton_015.grid(row=10, column=2)
         GButton_015["justify"] = "center"
         GButton_015["text"] = "Decompile"
         GButton_015.place(x=20, y=80, width=80,height=40)
